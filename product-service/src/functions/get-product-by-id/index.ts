@@ -6,14 +6,14 @@ export default {
     {
       httpApi: {
         method: "get",
-        path: "/movies/{id}",
+        path: "/products/{id}",
         responses: {
           200: {
-            description: "Returns a single movie with provided ID",
-            bodyType: "Movie",
+            description: "Returns a single product with provided ID",
+            bodyType: "Product",
           },
           404: {
-            description: "Movie not found",
+            description: "Product not found",
           },
           500: {
             description: "Server error",

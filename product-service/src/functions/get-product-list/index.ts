@@ -6,11 +6,11 @@ export default {
     {
       httpApi: {
         method: "get",
-        path: "/movies",
+        path: "/products",
         responses: {
           200: {
-            description: "Returns list of movies",
-            bodyType: "Movies",
+            description: "Returns list of products",
+            bodyType: "Products",
           },
           500: {
             description: "Server error",

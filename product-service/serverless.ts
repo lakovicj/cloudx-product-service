@@ -1,7 +1,7 @@
 import type { AWS } from "@serverless/typescript";
 
-import getMovieList from "@functions/get-movie-list";
-import getMovieById from "@functions/get-movie-by-id";
+import getProductList from "@functions/get-product-list";
+import getProductById from "@functions/get-product-by-id";
 
 const serverlessConfiguration: AWS = {
   service: "product-service",
@@ -30,14 +30,14 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { getMovieList, getMovieById },
+  functions: { getProductList, getProductById },
   package: { individually: true },
   custom: {
     autoswagger: {
       title: "Product Service API",
       apiType: "httpApi",
       generateSwaggerOnDeploy: true,
-      typefiles: ["./src/model/movie.d.ts"],
+      typefiles: ["./src/model/product.d.ts"],
     },
     esbuild: {
       bundle: true,

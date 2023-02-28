@@ -1,4 +1,4 @@
-import MovieService from "./MovieService";
+import ProductService from "./ProductService";
 
-const movieService: MovieService = new MovieService();
-export default movieService;
+const productService: ProductService = new ProductService();
+export default productService;
