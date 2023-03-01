@@ -6,7 +6,7 @@ import { HTTP_STATUS_CODES } from "@constants/http-status-codes";
 import { Products } from "src/model/product";
 import productService from "@service/index";
 
-const getProductList: ValidatedEventAPIGatewayProxyEvent<
+export const getProductList: ValidatedEventAPIGatewayProxyEvent<
   typeof schema
 > = async () => {
   try {
