@@ -1,0 +1,168 @@
+{
+  "Products": [
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "ec50a094-cfc8-4b44-ac9f-d69e2eb1beac" },
+          "title": { "S": "Movie Item" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "25.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "b80b6e7e-a47f-46e8-9b00-03a13b782349" },
+          "title": { "S": "Happy Day" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "11.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "5944284c-3bfa-4e06-b713-e28151e312ee" },
+          "title": { "S": "Scared of My Shadow" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "17.00" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "76aecc79-e619-418f-bab0-e45ff23633e0" },
+          "title": { "S": "Beach" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "150.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "2a8018d9-7a56-4ff4-a16f-8a5dfcef6f49" },
+          "title": { "S": "Animals" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "19.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "492459b4-797c-4e76-8be9-a093379d79b2" },
+          "title": { "S": "Aliens" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "2.00" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "b6a570a1-b277-4595-b8d1-cb516eb04798" },
+          "title": { "S": "Tea cup" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "95.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "7d45f14c-516a-49ff-ad8e-d5eb835f1e26" },
+          "title": { "S": "Chair" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "14.99" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": { "S": "43b9ccf1-22f3-462e-82a1-c0e7830240ed" },
+          "title": { "S": "Table" },
+          "description": { "S": "Some description.." },
+          "price": { "N": "99.00" }
+        }
+      }
+    }
+  ],
+  "Stocks": [
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "ec50a094-cfc8-4b44-ac9f-d69e2eb1beac" },
+          "count": { "N": "8" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "b80b6e7e-a47f-46e8-9b00-03a13b782349" },
+          "count": { "N": "42" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "5944284c-3bfa-4e06-b713-e28151e312ee" },
+          "count": { "N": "150" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "76aecc79-e619-418f-bab0-e45ff23633e0" },
+          "count": { "N": "81" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "2a8018d9-7a56-4ff4-a16f-8a5dfcef6f49" },
+          "count": { "N": "425" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "492459b4-797c-4e76-8be9-a093379d79b2" },
+          "count": { "N": "15" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "b6a570a1-b277-4595-b8d1-cb516eb04798" },
+          "count": { "N": "2" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "7d45f14c-516a-49ff-ad8e-d5eb835f1e26" },
+          "count": { "N": "142" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "product_id": { "S": "43b9ccf1-22f3-462e-82a1-c0e7830240ed" },
+          "count": { "N": "11" }
+        }
+      }
+    }
+  ]
+}
