@@ -1,18 +1,14 @@
 import { Product, Products } from "src/model/product";
-import products from "@mocks/products.json";
+import productsRepository from "src/repository/products-repository";
 
 export default class ProductService {
-  constructor() {}
-
   async getProducts(): Promise<Products> {
-    return new Promise<Products>((resolve) => {
-      resolve(products);
-    });
+    const products: Products = await productsRepository.getAllProducts();
+    return products;
   }
 
   async getProductById(id: string): Promise<Product> {
-    return new Promise<Product>((resolve) => {
-      resolve(products.find((product: Product) => product.id === id));
-    });
+    const product: Product = await productsRepository.getProductById(id);
+    return product;
   }
 }

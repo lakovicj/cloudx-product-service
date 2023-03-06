@@ -9,8 +9,10 @@ const serverlessConfiguration: AWS = {
   plugins: [
     "serverless-auto-swagger",
     "serverless-esbuild",
+    "serverless-dotenv-plugin",
     "serverless-offline",
   ],
+  useDotenv: true,
   provider: {
     name: "aws",
     runtime: "nodejs14.x",

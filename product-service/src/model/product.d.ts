@@ -7,3 +7,10 @@ export type Product = {
 };
 
 export type Products = Product[];
+
+export type Stock = {
+  product_id: string;
+  count: number;
+};
+
+export type Stocks = Stock[];
