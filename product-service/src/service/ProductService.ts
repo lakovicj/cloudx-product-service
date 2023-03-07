@@ -11,4 +11,11 @@ export default class ProductService {
     const product: Product = await productsRepository.getProductById(id);
     return product;
   }
+
+  async createProduct(productData: Omit<Product, "id">): Promise<string> {
+    const newProductId: string = await productsRepository.saveProduct(
+      productData
+    );
+    return newProductId;
+  }
 }
