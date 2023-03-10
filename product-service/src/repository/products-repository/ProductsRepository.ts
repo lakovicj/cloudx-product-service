@@ -54,34 +54,34 @@ export default class ProductsRepository {
   saveProduct = async (productData: Omit<Product, "id">): Promise<string> => {
     const uuid: string = randomUUID();
 
-    const result = this.client
-      .transactWrite({
-        TransactItems: [
-          {
-            Put: {
-              TableName: process.env.PRODUCTS_TABLE_NAME,
-              Item: {
-                id: { S: uuid },
-                title: { S: productData.title },
-                description: { S: productData.description },
-                price: { N: productData.price },
+    await this.client
+      .batchWrite({
+        RequestItems: {
+          [process.env.PRODUCTS_TABLE_NAME]: [
+            {
+              PutRequest: {
+                Item: {
+                  id: uuid,
+                  title: productData.title,
+                  description: productData.description,
+                  price: productData.price,
+                },
               },
             },
-          },
-          {
-            Put: {
-              TableName: process.env.STOCKS_TABLE_NAME,
-              Item: {
-                product_id: { S: uuid },
-                count: { N: productData.count },
+          ],
+          [process.env.STOCKS_TABLE_NAME]: [
+            {
+              PutRequest: {
+                Item: {
+                  product_id: uuid,
+                  count: productData.count,
+                },
               },
             },
-          },
-        ],
+          ],
+        },
       })
       .promise();
-
-    await result;
 
     return uuid;
   };
