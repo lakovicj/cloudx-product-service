@@ -5,15 +5,15 @@ export default {
   events: [
     {
       httpApi: {
-        method: "get",
-        path: "/products/{id}",
+        method: "put",
+        path: "/products",
         responseData: {
           200: {
-            description: "Returns a single product with provided ID",
+            description: "Returns upserted product",
             bodyType: "Product",
           },
-          404: {
-            description: "Product not found",
+          400: {
+            description: "Bad request - invalid data",
           },
           500: {
             description: "Server error",

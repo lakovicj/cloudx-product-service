@@ -7,7 +7,7 @@ export default {
       httpApi: {
         method: "get",
         path: "/products",
-        responses: {
+        responseData: {
           200: {
             description: "Returns list of products",
             bodyType: "Products",

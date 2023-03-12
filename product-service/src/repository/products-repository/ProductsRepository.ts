@@ -1,6 +1,7 @@
 import dynamoDBClient from "../DynamoDBClient";
 import AWS from "aws-sdk";
 import { Product, Products, Stock, Stocks } from "src/model/product";
+import { randomUUID } from "crypto";
 
 export default class ProductsRepository {
   private client: AWS.DynamoDB.DocumentClient;
@@ -48,5 +49,40 @@ export default class ProductsRepository {
       ...product,
       count: stock.count,
     };
+  };
+
+  saveProduct = async (productData: Omit<Product, "id">): Promise<string> => {
+    const uuid: string = randomUUID();
+
+    await this.client
+      .batchWrite({
+        RequestItems: {
+          [process.env.PRODUCTS_TABLE_NAME]: [
+            {
+              PutRequest: {
+                Item: {
+                  id: uuid,
+                  title: productData.title,
+                  description: productData.description,
+                  price: productData.price,
+                },
+              },
+            },
+          ],
+          [process.env.STOCKS_TABLE_NAME]: [
+            {
+              PutRequest: {
+                Item: {
+                  product_id: uuid,
+                  count: productData.count,
+                },
+              },
+            },
+          ],
+        },
+      })
+      .promise();
+
+    return uuid;
   };
 }
