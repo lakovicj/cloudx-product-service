@@ -5,11 +5,11 @@ export default {
   events: [
     {
       httpApi: {
-        method: "post",
+        method: "put",
         path: "/products",
         responseData: {
           200: {
-            description: "Returns created product",
+            description: "Returns upserted product",
             bodyType: "Product",
           },
           400: {
